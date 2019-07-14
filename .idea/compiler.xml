@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ananalyse" />
+        <module name="demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ananalyse" target="1.8" />
       <module name="ananalysis" target="1.8" />
       <module name="ananalysis (1)" target="1.8" />
+      <module name="demo" target="1.8" />
       <module name="parentall" target="1.8" />
       <module name="portaltrait" target="1.8" />
     </bytecodeTargetLevel>

@@ -1,0 +1,63 @@
+create table user_info(
+  id bigint(20) not null auto_increment comment '主键',
+  user_id int default null comment '用户id',
+  user_name varchar(100) default null  comment '用户姓名',
+  password varchar(25) default null  comment '密码',
+  sex varchar(23) default null comment '性别',
+  mobile varchar(20) default null comment '手机号码',
+  email varchar(100) default null  comment 'email',
+  registry_time datetime default null  comment '注册时间',
+  age int default null comment '年龄',
+  termination varchar(10) default null comment '终端类型',
+  PRIMARY KEY (id)
+)ENGINE =InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 comment ='用户信息表';
+
+create table user_info_ext(
+  id bigint(20) not null auto_increment comment '主键',
+  education varchar(100) default null comment '教育',
+  income bigint(100) default null  comment '收入',
+  occupation varchar(25) default null  comment '职业',
+  marriage varchar(23) default null comment '婚姻',
+  has_child char(1) default null comment '是否有小孩',
+  has_house_car char(1) default null  comment '是否有车有房',
+  mobile_brand varchar(100) default null  comment '手机品牌',
+  user_id int default null comment '年龄',
+  PRIMARY KEY (id)
+)ENGINE =InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 comment ='用户信息表';
+
+
+create table product_info(
+  id bigint(20) not null auto_increment comment '主键',
+  product_type_id int default null comment '商品类型id',
+  product_name varchar(100) default null  comment '商品名称',
+  product_description varchar(100) default null  comment '商品描述',
+  price int default null comment '价格',
+  gmt_create datetime default null comment '创建时间',
+  gmt_modified datetime default null  comment '修改时间',
+  mechart_id int default null  comment '商品id',
+  product_url varchar(100) default null comment '图片url',
+  PRIMARY KEY (id)
+)ENGINE =InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 comment ='商品信息表';
+
+create table product_type(
+  id bigint(20) not null auto_increment comment '主键',
+  product_name varchar(100) default null  comment '商品名称',
+  product_description varchar(100) default null  comment '商品描述',
+  product_type_leave int default null comment '商品等级',
+  PRIMARY KEY (id)
+)ENGINE =InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 comment ='商品类别信息表';
+
+create table order_info(
+  id bigint(20) not null auto_increment comment '主键',
+  product_id int default null comment '商品类型id',
+  product_type_id varchar(100) default null  comment '商品名称',
+  gmt_create datetime default null comment '创建时间',
+  amount double default null comment '支付金额',
+  pay_time datetime default null  comment '支付时间',
+  pay_type int default null comment '支付类型',
+  pay_status int default null comment '支付状态',
+  coupon_amount double default  null comment '优惠情况',
+  total_amount double default  null comment '总金额',
+  refund double default  null comment '退款',
+  PRIMARY KEY (id)
+)ENGINE =InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 comment ='订单信息表';

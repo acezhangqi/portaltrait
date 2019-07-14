@@ -8,6 +8,7 @@ import com.zju.common.YearBaseEnum;
 import com.zju.object.StaticsEntity;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -83,4 +84,30 @@ public class DataUtils {
         map.put("upsert", JSON.toJSONString(upsert));
         return map;
     }
+
+    /**
+     * 计算两个时间点之间的差距天数
+     * @param startTime
+     * @param endTime
+     * @param dateFormatString
+     * @return
+     * @throws ParseException
+     */
+    public static int getDaysBetweenbyStartAndend(String startTime,String endTime,String dateFormatString) throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat(dateFormatString);
+        Date start = dateFormat.parse(startTime);
+        Date end = dateFormat.parse(endTime);
+        Calendar startCalendar = Calendar.getInstance();
+        Calendar endCalendar = Calendar.getInstance();
+        startCalendar.setTime(start);
+        endCalendar.setTime(end);
+        int days = 0;
+        while(startCalendar.before(endCalendar)){
+            startCalendar.add(Calendar.DAY_OF_YEAR,1);
+            days += 1;
+        }
+        return days;
+    }
+
+
 }

@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ananalyse</module>
+        <module>demo</module>
     </modules>
     <properties>
         <java_source_version>1.8</java_source_version>
